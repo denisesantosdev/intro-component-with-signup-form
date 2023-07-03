@@ -1,35 +1,94 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
+import { useState } from "react";
+
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [form, setForm] = React.useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+  });
+
+  function handleOnChange(event) {
+    const { name, value } = event.target;
+
+    setForm((prevState) => {
+      return {
+        ...prevState,
+        [name]: value,
+      };
+    });
+  }
+  
+  function handleOnSubmit(event) {
+    event.preventDefault()
+    console.log(form);
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
+    <main>
+      <section>
+        <h1>Learn to code by watching others</h1>
         <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
+          See how experienced developers solve problems in real-time. Watching
+          scripted tutorials is great, but understanding how developers think is
+          invaluable.
         </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
+        <button>Try it free 7 days then $20/mo. thereafter</button>
+      </section>
+      <section>
+        <form onSubmit={handleOnSubmit}>
+          <div>
+            <input
+              type="text"
+              id="first-name"
+              name="firstName"
+              value={form.firstName}
+              onChange={handleOnChange}
+            />
+            <label htmlFor="first-name">First Name</label>
+          </div>
+          <div>
+            <input
+              type="text"
+              id="last-name"
+              name="lastName"
+              value={form.lastName}
+              onChange={handleOnChange}
+            />
+            <label htmlFor="last-name">Last Name</label>
+          </div>
+          <div>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={form.email}
+              onChange={handleOnChange}
+            />
+            <label htmlFor="email">Email</label>
+          </div>
+          <div>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              value={form.password}
+              onChange={handleOnChange}
+            />
+            <label htmlFor="password">Password</label>
+          </div>
+          <button>Claim your free trial</button>
+        </form>
+      </section>
+      <p>
+        By clicking the button, you are agreeing to our{" "}
+        <a href="">Terms and Services</a>
       </p>
-    </>
-  )
+    </main>
+  );
 }
 
-export default App
+export default App;
