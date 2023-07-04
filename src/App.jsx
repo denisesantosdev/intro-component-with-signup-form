@@ -5,11 +5,13 @@ import "./App.css";
 
 function App() {
   const [form, setForm] = React.useState({
-    firstName: "",
-    lastName: "",
+    "first name": "",
+    "last name": "",
     email: "",
     password: "",
   });
+
+  const [showMessage, setShowMessage] = React.useState(false);
 
   function handleOnChange(event) {
     const { name, value } = event.target;
@@ -21,10 +23,18 @@ function App() {
       };
     });
   }
-  
+
   function handleOnSubmit(event) {
-    event.preventDefault()
-    console.log(form);
+    event.preventDefault();
+    //console.log(form);
+    //handleEmpty("first name");
+    setShowMessage(true);
+  }
+
+  function handleEmpty(input) {
+    if (form[input] === "") {
+      return `${input} can not be empty`;
+    }
   }
 
   return (
@@ -44,22 +54,25 @@ function App() {
             <input
               type="text"
               id="first-name"
-              name="firstName"
-              value={form.firstName}
+              name="first name"
+              value={form["first name"]}
               onChange={handleOnChange}
             />
             <label htmlFor="first-name">First Name</label>
+            <p>{showMessage ? handleEmpty("first name") : ""}</p>
           </div>
           <div>
             <input
               type="text"
               id="last-name"
-              name="lastName"
-              value={form.lastName}
+              name="last name"
+              value={form["last name"]}
               onChange={handleOnChange}
             />
             <label htmlFor="last-name">Last Name</label>
+            <p>{showMessage ? handleEmpty("last name") : ""}</p>
           </div>
+
           <div>
             <input
               type="email"
@@ -69,6 +82,7 @@ function App() {
               onChange={handleOnChange}
             />
             <label htmlFor="email">Email</label>
+            <p>{showMessage ? handleEmpty("email") : ""}</p>
           </div>
           <div>
             <input
@@ -79,6 +93,7 @@ function App() {
               onChange={handleOnChange}
             />
             <label htmlFor="password">Password</label>
+            <p>{showMessage ? handleEmpty("password") : ""}</p>
           </div>
           <button>Claim your free trial</button>
         </form>
