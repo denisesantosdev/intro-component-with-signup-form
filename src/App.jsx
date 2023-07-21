@@ -1,5 +1,4 @@
 import React from "react";
-import { useState } from "react";
 
 import "./App.css";
 
@@ -26,8 +25,6 @@ function App() {
 
   function handleOnSubmit(event) {
     event.preventDefault();
-    //console.log(form);
-    //handleEmpty("first name");
     setShowMessage(true);
   }
 
@@ -38,19 +35,21 @@ function App() {
   }
 
   return (
-    <main>
-      <section>
+    <main className="container">
+      <section className="text-section">
         <h1>Learn to code by watching others</h1>
         <p>
           See how experienced developers solve problems in real-time. Watching
           scripted tutorials is great, but understanding how developers think is
           invaluable.
         </p>
-        <button>Try it free 7 days then $20/mo. thereafter</button>
+        <button className="btn text-section__btn">
+          Try it free 7 days then $20/mo. thereafter
+        </button>
       </section>
-      <section>
+      <section className="form-section">
         <form onSubmit={handleOnSubmit}>
-          <div>
+          <div className="input-wrapper">
             <input
               type="text"
               id="first-name"
@@ -61,7 +60,7 @@ function App() {
             <label htmlFor="first-name">First Name</label>
             <p>{showMessage ? handleEmpty("first name") : ""}</p>
           </div>
-          <div>
+          <div className="input-wrapper">
             <input
               type="text"
               id="last-name"
@@ -73,7 +72,7 @@ function App() {
             <p>{showMessage ? handleEmpty("last name") : ""}</p>
           </div>
 
-          <div>
+          <div className="input-wrapper">
             <input
               type="email"
               id="email"
@@ -84,7 +83,7 @@ function App() {
             <label htmlFor="email">Email</label>
             <p>{showMessage ? handleEmpty("email") : ""}</p>
           </div>
-          <div>
+          <div className="input-wrapper">
             <input
               type="password"
               id="password"
@@ -95,13 +94,13 @@ function App() {
             <label htmlFor="password">Password</label>
             <p>{showMessage ? handleEmpty("password") : ""}</p>
           </div>
-          <button>Claim your free trial</button>
+          <button className="btn form-section__btn">Claim your free trial</button>
         </form>
+        <p className="agreement-text">
+          By clicking the button, you are agreeing to our{" "}
+          <a href="">Terms and Services</a>
+        </p>
       </section>
-      <p>
-        By clicking the button, you are agreeing to our{" "}
-        <a href="">Terms and Services</a>
-      </p>
     </main>
   );
 }
