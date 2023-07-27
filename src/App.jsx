@@ -56,6 +56,7 @@ function App() {
               name="first name"
               value={form["first name"]}
               onChange={handleOnChange}
+              className={showMessage ? "error-empty" : " "}
             />
             <label htmlFor="first-name">First Name</label>
             <p>{showMessage ? handleEmpty("first name") : ""}</p>
@@ -67,6 +68,7 @@ function App() {
               name="last name"
               value={form["last name"]}
               onChange={handleOnChange}
+              className={showMessage ? "error-empty" : " "}
             />
             <label htmlFor="last-name">Last Name</label>
             <p>{showMessage ? handleEmpty("last name") : ""}</p>
@@ -79,6 +81,7 @@ function App() {
               name="email"
               value={form.email}
               onChange={handleOnChange}
+              className={showMessage ? "error-empty" : " "}
             />
             <label htmlFor="email">Email</label>
             <p>{showMessage ? handleEmpty("email") : ""}</p>
@@ -90,6 +93,7 @@ function App() {
               name="password"
               value={form.password}
               onChange={handleOnChange}
+              className={showMessage ? "error-empty" : " "}
             />
             <label htmlFor="password">Password</label>
             <p>{showMessage ? handleEmpty("password") : ""}</p>
@@ -97,8 +101,7 @@ function App() {
           <button className="btn form-section__btn">Claim your free trial</button>
         </form>
         <p className="agreement-text">
-          By clicking the button, you are agreeing to our{" "}
-          <a href="">Terms and Services</a>
+          By clicking the button, you are agreeing to our <a href="">Terms and Services</a>
         </p>
       </section>
     </main>

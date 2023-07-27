@@ -2,7 +2,6 @@
 
 * {
   box-sizing: border-box;
-  outline: 1px solid red;
 }
 
 :root {
@@ -88,4 +87,11 @@ body {
 .agreement-text a {
   color: var(--red);
   font-weight: 600;
+}
+
+.form-section input.error-empty {
+  background-image: url(assets/images/icon-error.svg);
+  background-repeat: no-repeat;
+  background-position: 95% center;
+  border: 3px solid var(--red);
 }
