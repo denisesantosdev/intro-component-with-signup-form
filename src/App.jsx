@@ -49,11 +49,11 @@ function App() {
           scripted tutorials is great, but understanding how developers think is
           invaluable.
         </p>
+      </section>
+      <section className="form-section">
         <button className="btn text-section__btn">
           Try it free 7 days then $20/mo. thereafter
         </button>
-      </section>
-      <section className="form-section">
         <form onSubmit={handleOnSubmit}>
           <div className="input-wrapper">
             <input
@@ -99,7 +99,7 @@ function App() {
               name="password"
               value={form.password}
               onChange={handleOnChange}
-              className={handleError("email")}
+              className={handleError("password")}
             />
             <label htmlFor="password">Password</label>
             <p>{handleEmpty("password")}</p>
@@ -107,11 +107,11 @@ function App() {
           <button className="btn form-section__btn">
             Claim your free trial
           </button>
-        </form>
         <p className="agreement-text">
           By clicking the button, you are agreeing to our{" "}
           <a href="">Terms and Services</a>
         </p>
+        </form>
       </section>
     </main>
   );
