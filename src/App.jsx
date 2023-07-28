@@ -29,8 +29,14 @@ function App() {
   }
 
   function handleEmpty(input) {
-    if (form[input] === "") {
+    if (form[input] === "" && showMessage) {
       return `${input} can not be empty`;
+    }
+  }
+
+  function handleError(input) {
+    if (form[input] === "" && showMessage) {
+      return `error`;
     }
   }
 
@@ -56,10 +62,10 @@ function App() {
               name="first name"
               value={form["first name"]}
               onChange={handleOnChange}
-              className={showMessage ? "error-empty" : " "}
+              className={handleError("first name")}
             />
             <label htmlFor="first-name">First Name</label>
-            <p>{showMessage ? handleEmpty("first name") : ""}</p>
+            <p>{handleEmpty("first name")}</p>
           </div>
           <div className="input-wrapper">
             <input
@@ -68,10 +74,10 @@ function App() {
               name="last name"
               value={form["last name"]}
               onChange={handleOnChange}
-              className={showMessage ? "error-empty" : " "}
+              className={handleError("last name")}
             />
             <label htmlFor="last-name">Last Name</label>
-            <p>{showMessage ? handleEmpty("last name") : ""}</p>
+            <p>{handleEmpty("last name")}</p>
           </div>
 
           <div className="input-wrapper">
@@ -81,10 +87,10 @@ function App() {
               name="email"
               value={form.email}
               onChange={handleOnChange}
-              className={showMessage ? "error-empty" : " "}
+              className={handleError("email")}
             />
             <label htmlFor="email">Email</label>
-            <p>{showMessage ? handleEmpty("email") : ""}</p>
+            <p>{handleEmpty("email")}</p>
           </div>
           <div className="input-wrapper">
             <input
@@ -93,15 +99,18 @@ function App() {
               name="password"
               value={form.password}
               onChange={handleOnChange}
-              className={showMessage ? "error-empty" : " "}
+              className={handleError("email")}
             />
             <label htmlFor="password">Password</label>
-            <p>{showMessage ? handleEmpty("password") : ""}</p>
+            <p>{handleEmpty("password")}</p>
           </div>
-          <button className="btn form-section__btn">Claim your free trial</button>
+          <button className="btn form-section__btn">
+            Claim your free trial
+          </button>
         </form>
         <p className="agreement-text">
-          By clicking the button, you are agreeing to our <a href="">Terms and Services</a>
+          By clicking the button, you are agreeing to our{" "}
+          <a href="">Terms and Services</a>
         </p>
       </section>
     </main>
