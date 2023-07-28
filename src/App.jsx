@@ -57,6 +57,7 @@ function App() {
         <form onSubmit={handleOnSubmit}>
           <div className="input-wrapper">
             <input
+              placeholder="First name"
               type="text"
               id="first-name"
               name="first name"
@@ -69,6 +70,7 @@ function App() {
           </div>
           <div className="input-wrapper">
             <input
+              placeholder="Last name"
               type="text"
               id="last-name"
               name="last name"
@@ -82,6 +84,7 @@ function App() {
 
           <div className="input-wrapper">
             <input
+              placeholder="Email"
               type="email"
               id="email"
               name="email"
@@ -94,6 +97,7 @@ function App() {
           </div>
           <div className="input-wrapper">
             <input
+              placeholder="Password"
               type="password"
               id="password"
               name="password"
@@ -107,10 +111,10 @@ function App() {
           <button className="btn form-section__btn">
             Claim your free trial
           </button>
-        <p className="agreement-text">
-          By clicking the button, you are agreeing to our{" "}
-          <a href="">Terms and Services</a>
-        </p>
+          <p className="agreement-text">
+            By clicking the button, you are agreeing to our{" "}
+            <a href="">Terms and Services</a>
+          </p>
         </form>
       </section>
     </main>

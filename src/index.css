@@ -68,18 +68,23 @@ body {
   border-color: var(--grayish-blue);
 }
 
+.form-section input::placeholder {
+  font-weight: bold;
+  color: var(--dark-blue);
+}
+
 .form-section label {
   display: none;
 }
 
 .input-wrapper p {
-    width: fit-content;
-    margin-top: 5px;
-    margin-left: auto;
-    font-size: .8rem;
-    color: var(--red);
-    font-weight: 600;
-    font-style: italic;
+  width: fit-content;
+  margin-top: 5px;
+  margin-left: auto;
+  font-size: 0.8rem;
+  color: var(--red);
+  font-weight: 600;
+  font-style: italic;
 }
 
 .agreement-text {
