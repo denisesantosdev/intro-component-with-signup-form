@@ -8,9 +8,6 @@ This is a solution to the [Intro component with sign up form challenge on Fronte
   - [The challenge](#the-challenge)
   - [Screenshot](#screenshot)
   - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-
 
 ## Overview
 
@@ -26,10 +23,11 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](public/mobile.png)
+![](public/desktop.png)
 
 ### Links
 
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Deploy - [https://intro-component-with-signup-form-sand.vercel.app/](https://intro-component-with-signup-form-sand.vercel.app/)
 
 
