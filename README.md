@@ -8,6 +8,9 @@ This is a solution to the [Intro component with sign up form challenge on Fronte
   - [The challenge](#the-challenge)
   - [Screenshot](#screenshot)
   - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+
 
 ## Overview
 
@@ -23,6 +26,7 @@ Users should be able to:
 
 ### Screenshot
 
+![](./screenshot.jpg)
 
 ### Links
 
